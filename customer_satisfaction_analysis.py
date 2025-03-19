@@ -180,10 +180,9 @@ with tab2:
       - **Positivo**: Polaridad > 0.2
       - **Neutral**: Polaridad entre -0.2 y 0.2
       - **Negativo**: Polaridad < -0.2
-    - **Ecuación**:  
-      \[
-      \text{Polaridad} = \frac{\sum (\text{Polaridad de cada palabra})}{\text{Número de palabras}}
-      \]
+    """)
+    st.latex(r"""
+    \text{Polaridad} = \frac{\sum (\text{Polaridad de cada palabra})}{\text{Número de palabras}}
     """)
 
     st.subheader("2. Modelo Predictivo de Abandono (Churn)")
@@ -195,11 +194,10 @@ with tab2:
       - `support_tickets`: Número de tickets de soporte abiertos.
       - `age`: Edad del cliente.
     - **Métrica de Evaluación**: AUC-ROC (Área bajo la curva ROC).
-    - **Ecuación de Predicción**:
-      \[
-      \text{Churn} = f(\text{satisfaction_score}, \text{purchase_frequency}, \text{support_tickets}, \text{age})
-      \]
     - **Balanceo de Datos**: SMOTE (Synthetic Minority Over-sampling Technique).
+    """)
+    st.latex(r"""
+    \text{Churn} = f(\text{satisfaction_score}, \text{purchase_frequency}, \text{support_tickets}, \text{age})
     """)
 
     st.subheader("3. Sistema de Alertas Tempranas")
@@ -209,10 +207,9 @@ with tab2:
       - Puntuación de satisfacción (< 6).
       - Tickets de soporte (≥ 3).
       - Frecuencia de compra (< 2).
-    - **Ecuación de Riesgo**:
-      \[
-      \text{Risk Score} = 0.5 \times (10 - \text{satisfaction_score}) + 0.3 \times \text{support_tickets} + 0.2 \times (10 - \text{purchase_frequency})
-      \]
+    """)
+    st.latex(r"""
+    \text{Risk Score} = 0.5 \times (10 - \text{satisfaction_score}) + 0.3 \times \text{support_tickets} + 0.2 \times (10 - \text{purchase_frequency})
     """)
 
     st.subheader("4. Word Clouds")
