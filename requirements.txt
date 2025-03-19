@@ -6,3 +6,4 @@ plotly
 dash
 dash-bootstrap-components
 streamlit
+WordCloud
