@@ -10,6 +10,7 @@ import joblib
 import re
 from nltk.corpus import stopwords
 import nltk
+from textblob import TextBlob
 
 # Configuración inicial
 nltk.download('stopwords')
@@ -21,6 +22,20 @@ def load_data():
     return pd.read_csv("customer_satisfaction_large.csv")
 
 df = load_data()
+
+# Función para análisis de sentimiento
+def analyze_sentiment(text):
+    analysis = TextBlob(text)
+    if analysis.sentiment.polarity > 0.2:
+        return 'Positive'
+    elif analysis.sentiment.polarity < -0.2:
+        return 'Negative'
+    else:
+        return 'Neutral'
+
+# Crear columna de sentimiento si no existe
+if 'sentiment' not in df.columns:
+    df['sentiment'] = df['feedback_text'].apply(analyze_sentiment)
 
 # Preprocesamiento de texto
 stop_words = set(stopwords.words('english'))
