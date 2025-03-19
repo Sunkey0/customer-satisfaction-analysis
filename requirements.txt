@@ -1,0 +1,8 @@
+nltk
+textblob
+pandas
+scikit-learn
+plotly
+dash
+dash-bootstrap-components
+streamlit
