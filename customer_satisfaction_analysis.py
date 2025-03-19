@@ -5,6 +5,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score  # Importar roc_auc_score
 from imblearn.over_sampling import SMOTE
 import joblib
 import re
